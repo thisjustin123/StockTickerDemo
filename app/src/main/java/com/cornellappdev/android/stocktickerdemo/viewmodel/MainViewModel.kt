@@ -30,7 +30,7 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun onTickerButtonClick(ticker: String, delta: Int) {
+    fun onTickerButtonClick(ticker: String, delta: Double) {
         mapFlow.value = mapFlow.value.toMutableMap().apply {
             this[ticker] = (this[ticker] ?: 0.0) + delta
         }
