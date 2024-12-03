@@ -11,12 +11,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.cornellappdev.android.stocktickerdemo.ui.components.TickerRow
 import com.cornellappdev.android.stocktickerdemo.viewmodel.MainViewModel
 
 @Composable
 fun MainScreen(
-    mainViewModel: MainViewModel = MainViewModel()
+    mainViewModel: MainViewModel = viewModel()
 ) {
     // TODO: Why isn't this causing a load?
     val map = mainViewModel.mapFlow.collectAsState().value
