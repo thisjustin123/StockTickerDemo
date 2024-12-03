@@ -21,11 +21,14 @@ fun TickerText(
     var increase: Boolean by remember { mutableStateOf(true) }
 
     LaunchedEffect(price) {
-        increase = price > previousPrice.value
+        increase = price >= previousPrice.value
         previousPrice.value = price
     }
 
-    AnimatedContent(targetState = price) { targetPrice ->
+    AnimatedContent(
+        targetState = price,
+        modifier = modifier
+    ) { targetPrice ->
         Text(
             text = "\$${String.format(Locale.US, "%.2f", targetPrice)}",
             color = if (increase) Color.Green else Color.Red,
