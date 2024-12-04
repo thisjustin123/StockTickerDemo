@@ -2,6 +2,7 @@ package com.cornellappdev.android.stocktickerdemo.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -26,9 +27,12 @@ fun MainScreen(
         itemsIndexed(map.entries.toTypedArray()) { index, entry ->
             TickerRow(ticker = entry.key, price = entry.value)
 
-            if (index < map.size - 1) {
-                Spacer(modifier = Modifier.height(1.dp).background(Color.Gray))
-            }
+            Spacer(
+                modifier = Modifier
+                    .background(Color.Gray)
+                    .height(1.dp)
+                    .fillMaxWidth()
+            )
         }
     }
 
