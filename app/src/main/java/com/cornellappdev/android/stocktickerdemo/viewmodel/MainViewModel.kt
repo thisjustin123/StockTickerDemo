@@ -1,5 +1,6 @@
 package com.cornellappdev.android.stocktickerdemo.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cornellappdev.android.stocktickerdemo.model.TickerRepository

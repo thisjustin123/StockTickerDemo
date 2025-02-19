@@ -25,7 +25,13 @@ fun MainScreen(
 
     LazyColumn(modifier = Modifier.systemBarsPadding()) {
         itemsIndexed(map.entries.toTypedArray()) { index, entry ->
-            TickerRow(ticker = entry.key, price = entry.value)
+            TickerRow(ticker = entry.key, price = entry.value,
+                onAddPressed = {
+                    mainViewModel.onTickerButtonClick(entry.key, 1.0)
+                },
+                onSubtractPressed = {
+                    mainViewModel.onTickerButtonClick(entry.key, -1.0)
+                })
 
             Spacer(
                 modifier = Modifier
