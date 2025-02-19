@@ -52,7 +52,7 @@ fun TickerRow(
 
             // Reused component!
             ChangeButton(
-                text = "+1",
+                text = "+",
                 color = Color.Green,
                 onClick = { priceState.value += 1.0 }
             )
@@ -61,7 +61,7 @@ fun TickerRow(
 
             // Reused component!
             ChangeButton(
-                text = "-1",
+                text = "-",
                 color = Color.Red,
                 onClick = { priceState.value -= 1.0 }
             )
@@ -79,16 +79,17 @@ private fun ChangeButton(
     Surface(
         shape = RoundedCornerShape(3.dp),
         color = color,
-        border = BorderStroke(1.dp, Color.Black),
+        border = BorderStroke(2.dp, Color.Black),
         onClick = onClick,
-        modifier = Modifier.size(40.dp)
+        modifier = Modifier.size(32.dp)
     ) {
-        Box(modifier = Modifier.size(40.dp)) {
+        Box(modifier = Modifier.size(32.dp)) {
             Text(
                 text = text,
                 modifier = Modifier
                     .padding(4.dp)
-                    .align(Alignment.Center)
+                    .align(Alignment.Center),
+                fontWeight = FontWeight.Bold
             )
         }
     }
